@@ -111,11 +111,18 @@ function scrollNav() {
 
     navLinks.forEach(link => {
         link.addEventListener('click', e => {
-            e.preventDefault()
-            const sectionScroll = e.target.getAttribute('href')
-            const section = document.querySelector(sectionScroll)
+            const sectionScroll = link.getAttribute('href')
 
-            section.scrollIntoView({behavior: 'smooth'})
+            // Solo interceptamos enlaces internos tipo #seccion
+            if (sectionScroll.startsWith('#')) {
+                e.preventDefault()
+                const section = document.querySelector(sectionScroll)
+
+                if (section) {
+                    section.scrollIntoView({ behavior: 'smooth' })
+                }
+            }
+            // Si no empieza por # (como https://...), el navegador navega normal
         })
     })
 }
