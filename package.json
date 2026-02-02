@@ -1,0 +1,25 @@
+{
+  "name": "festivalmusica",
+  "version": "1.0.0",
+  "description": "Aprendiendo SASS y NPM",
+  "keywords": [
+    "SASS",
+    "NPM",
+    "Gulp"
+  ],
+  "license": "ISC",
+  "author": "Felix Sobrino",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch src/scss:build/css/app.css",
+    "dev": "gulp"
+  },
+  "devDependencies": {
+    "gulp-sass": "^6.0.1",
+    "sass": "^1.96.0"
+  },
+  "dependencies": {
+    "gulp": "^5.0.1"
+  }
+}
